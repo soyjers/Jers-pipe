@@ -1,32 +1,32 @@
-name: Build and Deploy
+# name: Build and Deploy
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: node.js configuracion
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
+#       - name: node.js configuracion
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '20'
 
-      - name: Install dependencies
-        run: npm install
+#       - name: Install dependencies
+#         run: npm install
 
-      - name: Build
-        run: npm run build -- --prod
+#       - name: Build
+#         run: npm run build -- --prod
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
+#   deploy:
+#     needs: build
+#     runs-on: ubuntu-latest
 
   #   steps:s
   #     - name: Deploy to S3
@@ -44,7 +44,7 @@ jobs:
 # on:
 #   push:
 #     branches:
-#       - main
+#       - master
 
 # jobs:
 #   build:
@@ -81,3 +81,21 @@ jobs:
       
 #       - name: aws s3 upload archives
 #         run: aws s3 cp ./dist/nombre-de-proyecto s3://bucket-name --recursive
+
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+ build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Installing Node js 
+        uses: actions/checkout@v2
+
+      - name: JUAN TEST 
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
